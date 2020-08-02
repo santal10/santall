@@ -65,7 +65,7 @@ class DashboardMain extends CI_Controller
 			$data["num_homme"] = $this->facturation_model->get_num_product_homme();
 			$data["num_femme"] = $this->facturation_model->get_num_product_femme();
 
-			$this->load->view("dashboard/header");
+			$this->load->view("dashboard/header",$data);
 			$this->load->view("dashboard/$page", $data);
 			$this->load->view("dashboard/footer");
 		}

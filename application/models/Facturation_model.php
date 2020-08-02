@@ -16,6 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $email =$this->input->post("billing_email");
             $orders =$this->input->post("orders");
             $nbr =$this->input->post("nbr");
+            $coupon = $this->input->post("couponn");
 
             $data = array(
                 "prixTotale" => $price,
@@ -30,8 +31,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 "billing_email" => $email,
                 "products" => $orders,
                 "quantities" => $nbr,
+                "coupon"=>$coupon,
             );
-            return $this->db->insert("facturation",$data);
+            $this->db->insert("facturation",$data);
         }
 
         function get_sales_by_client($id){

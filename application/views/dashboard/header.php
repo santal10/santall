@@ -45,7 +45,7 @@
 
 </head>
 
-<body class="fixed-navbar">
+<body class="fixed-navbar fixed-layout">
     <div class="page-wrapper">
         <!-- START HEADER-->
         <header class="header">
@@ -57,8 +57,8 @@
             </div>
             <div class="flexbox flex-1">
                 <!-- START TOP-LEFT TOOLBAR-->
-                <!-- <ul class="nav navbar-toolbar">
-                    <li>
+                <ul class="nav navbar-toolbar">
+                    <!-- <li>
                         <a class="nav-link sidebar-toggler js-sidebar-toggler" href="javascript:;">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -69,12 +69,12 @@
                         <a class="nav-link search-toggler js-search-toggler"><i class="ti-search"></i>
                             <span>Search here...</span>
                         </a>
-                    </li>
-                </ul> -->
+                    </li> -->
+                </ul>
                 <!-- END TOP-LEFT TOOLBAR-->
-                <!-- START TOP-RIGHT TOOLBAR-->
+                <!-- START TOP-RIGHT TOOLBAR -->
                 <ul class="nav navbar-toolbar">
-                    <li class="timeout-toggler">
+                    <!-- <li class="timeout-toggler">
                         <a class="nav-link toolbar-icon" data-toggle="modal" data-target="#session-dialog" href="javascript:;"><i class="ti-alarm-clock timeout-toggler-icon rel"><span class="notify-signal"></span></i></a>
                     </li>
                     <li class="dropdown dropdown-inbox">
@@ -211,7 +211,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="dropdown dropdown-user">
                         <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
                             <span><?= $this->session->userdata("emailAdmin") ?></span>
@@ -226,17 +226,17 @@
                                 <div>
                                     <h5 class="font-strong text-white"><?= $this->session->userdata("emailAdmin") ?></h5>
                                     <div>
-                                        <span class="admin-badge mr-3"><i class="ti-alarm-clock mr-2"></i>30m.</span>
+                                        <span class="admin-badge mr-3"><i class="ti-alarm-clock mr-2"></i></span>
                                         <span class="admin-badge"><i class="ti-lock mr-2"></i>Safe Mode</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="admin-menu-features">
-                                <a class="admin-features-item" href="javascript:;"><i class="ti-user"></i>
-                                    <span>PROFILE</span>
+                                <a class="admin-features-item" href="<?= base_url() ?>dashboard/ecommerce_customers"><i class="ti-user"></i>
+                                    <span>Clients</span>
                                 </a>
-                                <a class="admin-features-item" href="javascript:;"><i class="ti-support"></i>
-                                    <span>SUPPORT</span>
+                                <a class="admin-features-item" href="<?= base_url() ?>dashboard/ecommerce_orders_list"><i class="ti-support"></i>
+                                    <span>Commandes</span>
                                 </a>
                                 <a class="admin-features-item" href="javascript:;"><i class="ti-settings"></i>
                                     <span>SETTINGS</span>
@@ -245,7 +245,7 @@
                             <div class="admin-menu-content">
                                 <div class="text-muted mb-2">Your Wallet</div>
                                 <div><i class="ti-wallet h1 mr-3 text-light"></i>
-                                    <span class="h1 text-success"><sup>$</sup>12.7k</span>
+                                    <span class="h1 text-success"><?= $sum ?><sup>DT</sup></span>
                                 </div>
                                 <div class="d-flex justify-content-between mt-2">
                                     <a class="text-muted" href="javascript:;">Earnings history</a>

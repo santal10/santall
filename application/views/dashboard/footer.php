@@ -1,9 +1,6 @@
 <footer class="page-footer">
-    <div class="font-13">2018 © <b>Adminca</b> - Save your time, choose the best</div>
-    <div>
-        <a class="px-3 pl-4" href="http://themeforest.net/item/adminca-responsive-bootstrap-4-3-angular-4-admin-dashboard-template/20912589" target="_blank">Purchase</a>
-        <a class="px-3" href="http://admincast.com/adminca/documentation.html" target="_blank">Docs</a>
-    </div>
+    <div class="font-13">2020 © <b>Ensi Junior Entreprise</b> - Save your time, choose the best</div>
+    
     <div class="to-top"><i class="fa fa-angle-double-up"></i></div>
 </footer>
 </div>
@@ -15,73 +12,14 @@
     <button class="reset input-search-close" type="button"><i class="ti-close"></i></button>
 </form>
 <!-- END SEARCH PANEL-->
-<!-- BEGIN THEME CONFIG PANEL-->
-<div class="theme-config">
-    <div class="theme-config-toggle"><i class="ti-settings theme-config-show"></i><i class="ti-close theme-config-close"></i></div>
-    <div class="theme-config-box">
-        <h5 class="text-center mb-4 mt-3">SETTINGS</h5>
-        <div class="font-strong mb-3">LAYOUT OPTIONS</div>
-        <div class="check-list mb-4">
-            <label class="checkbox checkbox-grey checkbox-primary">
-                <input id="_fixedNavbar" type="checkbox" checked>
-                <span class="input-span"></span>Fixed navbar</label>
-            <label class="checkbox checkbox-grey checkbox-primary mt-3">
-                <input id="_fixedlayout" type="checkbox">
-                <span class="input-span"></span>Fixed layout</label>
-            <label class="checkbox checkbox-grey checkbox-primary mt-3">
-                <input class="js-sidebar-toggler" type="checkbox">
-                <span class="input-span"></span>Collapse sidebar</label>
-            <label class="checkbox checkbox-grey checkbox-primary mt-3">
-                <input id="_drawerSidebar" type="checkbox">
-                <span class="input-span"></span>Drawer sidebar</label>
-        </div>
-        <div class="font-strong mb-3">LAYOUT STYLE</div>
-        <div class="check-list mb-4">
-            <label class="radio radio-grey radio-primary">
-                <input type="radio" name="layout-style" value="" checked="">
-                <span class="input-span"></span>Fluid</label>
-            <label class="radio radio-grey radio-primary mt-3">
-                <input type="radio" name="layout-style" value="1">
-                <span class="input-span"></span>Boxed</label>
-        </div>
-    </div>
-</div>
-<!-- END THEME CONFIG PANEL-->
+
 <!-- BEGIN PAGA BACKDROPS-->
 <div class="sidenav-backdrop backdrop"></div>
 <div class="preloader-backdrop">
     <div class="page-preloader">Loading</div>
 </div>
 <!-- END PAGA BACKDROPS-->
-<!-- New question dialog-->
-<div class="modal fade" id="session-dialog">
-    <div class="modal-dialog" style="width:400px;" role="document">
-        <div class="modal-content timeout-modal">
-            <div class="modal-body">
-                <button class="close" data-dismiss="modal" aria-label="Close"></button>
-                <div class="text-center mt-3 mb-4"><i class="ti-lock timeout-icon"></i></div>
-                <div class="text-center h4 mb-3">Set Auto Logout</div>
-                <p class="text-center mb-4">You are about to be signed out due to inactivity.<br>Select after how many minutes of inactivity you log out of the system.</p>
-                <div id="timeout-reset-box" style="display:none;">
-                    <div class="form-group text-center">
-                        <button class="btn btn-danger btn-fix btn-air" id="timeout-reset">Deactivate</button>
-                    </div>
-                </div>
-                <div id="timeout-activate-box">
-                    <form id="timeout-form" action="javascript:;">
-                        <div class="form-group pl-3 pr-3 mb-4">
-                            <input class="form-control form-control-line" type="text" name="timeout_count" placeholder="Minutes" id="timeout-count">
-                        </div>
-                        <div class="form-group text-center">
-                            <button class="btn btn-primary btn-fix btn-air" id="timeout-activate">Activate</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End New question dialog-->
+
 
 <!-- CORE PLUGINS-->
 

@@ -245,9 +245,9 @@
 														<a href=" <?= base_url() ?>shop-cart" class="btn  font-weight-bold rounded text-0">VOIR LE
 															PANIER</a>
 													</div>
-													<div class="col pl-1">
+													<!-- <div class="col pl-1">
 														<a href=" <?= base_url() ?>shop-checkout" class="btn  font-weight-bold rounded text-0">CHECKOUT</a>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</div>
