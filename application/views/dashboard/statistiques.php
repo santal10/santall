@@ -36,52 +36,42 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Polar Area</div>
+                        <div class="ibox-title">Quantité de vente de chaque produit</div>
                     </div>
                     <div class="ibox-body">
                         <div>
-                            <canvas id="polar_chart" style="height:200px;"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="ibox">
-                    <div class="ibox-head">
-                        <div class="ibox-title">Doughnut Chart</div>
-                    </div>
-                    <div class="ibox-body">
-                        <div>
-                            <canvas id="doughnut_chart" style="height:200px;"></canvas>
+                            <canvas id="bar_chart2" style="height:200px;"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- <div class="ibox">
-                    <div class="ibox-head">
-                        <div class="ibox-title">Radar Chart</div>
-                    </div>
-                    <div class="ibox-body">
-                        <div>
-                            <canvas id="radar_chart" style="height:200px;"></canvas>
-                        </div>
-                    </div>
-                </div> -->
+            <div class="ibox-head">
+                <div class="ibox-title">Radar Chart</div>
+            </div>
+            <div class="ibox-body">
+                <div>
+                    <canvas id="radar_chart" style="height:200px;"></canvas>
+                </div>
+            </div>
+        </div> -->
     </div>
     <!-- END PAGE CONTENT-->
-    <?php 
-        // echo "<script>";
-        // echo "tab = []";
-        // foreach($all_products as $prod){
-        //     echo "tab.push(".$prod['title'].")";
-        // }
-        // echo "</sctipt>";
+    <?php
+    // echo "<script>";
+    // echo "tab = []";
+    // foreach($all_products as $prod){
+    //     echo "tab.push(".$prod['title'].")";
+    // }
+    // echo "</sctipt>";
     ?>
     <script>
         $(function() {
@@ -122,7 +112,6 @@
             // Bar Chart example
 
             var barData = {
-                // labels: ["Sunday", "Munday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 datasets: [{
                         label: "Homme",
                         backgroundColor: '#DADDE0', //'rgba(220, 220, 220, 0.5)',
@@ -148,6 +137,8 @@
                 data: barData,
                 options: barOptions
             });
+            // barchart 2 
+
 
             // Polar area example
 
@@ -174,7 +165,7 @@
 
             };
 
-            var ctx3 = document.getElementById("polar_chart").getContext("2d");
+            // var ctx3 = document.getElementById("polar_chart").getContext("2d");
             new Chart(ctx3, {
                 type: 'polarArea',
                 data: polarData,
@@ -185,7 +176,7 @@
 
 
             var doughnutData = {
-                labels: [],
+                labels: ["firas","ezfkjfhzkef"],
                 datasets: [{
                     data: [200, 40, 60],
                     backgroundColor: ["#3bceb6", "#bdc3c7", "#8995c7", "ffffff"]
@@ -205,35 +196,37 @@
                 options: doughnutOptions
             });
 
-            // Radar chart example
-
-            var radarData = {
-                labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
-                datasets: [{
-                        label: "My First dataset",
-                        backgroundColor: "rgba(189,195,199,0.2)",
-                        borderColor: "rgba(189,195,199,1)",
-                        data: [60, 75, 80, 81, 40, 65, 45]
-                    },
-                    {
-                        label: "My Second dataset",
-                        backgroundColor: "rgba(24,197,169,0.2)",
-                        borderColor: "rgba(24,197,169,1)",
-                        data: [28, 48, 40, 19, 96, 27, 100]
-                    }
-                ]
-            };
-
-            var radarOptions = {
-                responsive: true
-            };
-
-            var ctx5 = document.getElementById("radar_chart").getContext("2d");
-            new Chart(ctx5, {
-                type: 'radar',
-                data: radarData,
-                options: radarOptions
-            });
+           
 
         });
     </script>
+    <?php
+    // $colors = array("#125487");
+    $x = "
+          var barData = {
+            // labels: ['homme'],
+            datasets: [";
+
+    foreach ($all_products as $i => $prod) {
+
+        $x .= "{
+                    label: '" . explode(" ", $prod->title)[0] . "',
+                    backgroundColor: '#125487', //'rgba(220, 220, 220, 0.5)',
+                    data: [" . ($prod->quatityTotale - $prod->quantity) . "]
+                },";
+    }
+    $x .= "]
+        };
+        var barOptions = {
+            responsive: true,
+            maintainAspectRatio: false
+        };
+
+        var ctx = document.getElementById('bar_chart2').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: barData,
+            options: barOptions
+        });";
+    echo "<script>$x</script>";
+    ?>

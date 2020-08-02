@@ -34,7 +34,7 @@
                                         <td><?= $women->type ?></td>
                                         <td><?= $women->nom_categorie ?></td>
                                         <td>
-                                            <a class="text-light mr-3 font-16" href="javascript:;"><i class="ti-pencil"></i></a>
+                                            <a class="text-light mr-3 font-16" href="<?= base_url() ?>dashboard/category/<?= $women->id ?>"><i class="ti-pencil"></i></a>
                                             <a class="text-light font-16" href="<?= base_url() ?>category/deleteCategory/<?= $women->id ?>"><i class="ti-trash"></i></a>
                                         </td>
                                     </tr>
@@ -45,7 +45,7 @@
                                         <td><?= $men->type ?></td>
                                         <td><?= $men->nom_categorie ?></td>
                                         <td>
-                                            <a class="text-light mr-3 font-16" href="javascript:;"><i class="ti-pencil"></i></a>
+                                            <a class="text-light mr-3 font-16" href="<?= base_url() ?>dashboard/category/<?= $men->id ?>"><i class="ti-pencil"></i></a>
                                             <a class="text-light font-16" href="<?= base_url() ?>category/deleteCategory/<?= $men->id ?>"><i class="ti-trash"></i></a>
                                         </td>
                                     </tr>

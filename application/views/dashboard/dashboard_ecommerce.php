@@ -69,7 +69,7 @@
                                             <span class="h3 mb-0 text-pink font-strong">105</span>
                                         </span>
                                     </div> -->
-                                    <a class="flexbox" href="ecommerce_orders_list.html" target="_blank">VIEW ALL<i class="ti-arrow-circle-right ml-2 font-18"></i></a>
+                                    <a class="flexbox" href="<?= base_url() ?>dashboard/ecommerce_orders_list">VIEW ALL<i class="ti-arrow-circle-right ml-2 font-18"></i></a>
                                 </div>
                                 <div class="ibox-fullwidth-block">
                                     <table class="table table-hover">

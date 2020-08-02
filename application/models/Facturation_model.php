@@ -18,6 +18,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $nbr =$this->input->post("nbr");
             $coupon = $this->input->post("couponn");
 
+            if($method === "en ligne"){
+                $price*=(1-0.05);
+            }
+
             $data = array(
                 "prixTotale" => $price,
                 "idClient" => $id,

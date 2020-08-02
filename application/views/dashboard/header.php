@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -251,17 +252,7 @@
                                     <a class="text-muted" href="javascript:;">Earnings history</a>
                                     <a class="d-flex align-items-center logout">Logout<i class="ti-shift-right ml-2 font-20"></i></a>
                                 </div>
-                                <script>
-                                    $(".logout").click(()=>{
-                                        $.ajax({
-                                            url:"<?= base_url() ?>admin/logoutAdmin",
-                                            method:"post",
-                                            success:(data)=>{
-                                                location.assign("<?= base_url() ?>dashboard/login-4")
-                                            }
-                                        })
-                                    })
-                                </script>
+
                             </div>
                         </div>
                     </li>
@@ -275,7 +266,7 @@
             <div id="sidebar-collapse">
                 <ul class="side-menu metismenu">
                     <li class="active">
-                        <a href="dashboard_ecommerce"><i class="sidebar-item-icon ti-home"></i>
+                        <a href="<?= base_url() ?>dashboard/dashboard_ecommerce"><i class="sidebar-item-icon ti-home"></i>
                             <span class="nav-label">Dashboard</span>
                         </a>
                     </li>
@@ -337,11 +328,22 @@
                     </li>
                 </ul>
                 <div class="sidebar-footer">
-                    <a href="javascript:;"><i class="ti-announcement"></i></a>
+                    <a href="javascript:;"><i class="ti-settings"></i></a>
                     <a href="calendar"><i class="ti-calendar"></i></a>
                     <a href="javascript:;"><i class="ti-comments"></i></a>
-                    <a href="login"><i class="ti-power-off"></i></a>
+                    <a href="javascript:;" class="logout"><i class="ti-power-off"></i></a>
                 </div>
             </div>
         </nav>
         <!-- END SIDEBAR-->
+        <script>
+            $(".logout").click(() => {
+                $.ajax({
+                    url: "<?= base_url() ?>admin/logoutAdmin",
+                    method: "post",
+                    success: (data) => {
+                        location.assign("<?= base_url() ?>dashboard/login-4")
+                    }
+                })
+            })
+        </script>

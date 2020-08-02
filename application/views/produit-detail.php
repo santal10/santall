@@ -138,11 +138,10 @@
 										<div class="comment-block">
 											<span class="comment-by">
 												<span class="comment-rating">
+													<?php for($i=0;$i<$comment["rate"];$i++){?>
 													<i class="fas fa-star text-color-dark mr-1"></i>
-													<i class="fas fa-star text-color-dark mr-1"></i>
-													<i class="fas fa-star text-color-dark mr-1"></i>
-													<i class="fas fa-star text-color-dark mr-1"></i>
-													<i class="fas fa-star text-color-dark"></i>
+													<?php } ?>
+													
 												</span>
 												<strong class="comment-author text-color-dark"><?= $comment["name"] ?></strong>
 												<span class="comment-date border-right-0 text-color-light-3"><?= $comment["created"] ?></span>

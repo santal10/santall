@@ -200,10 +200,10 @@ class Users extends CI_Controller
             $this->users_model->update_password($id, $enc_password);
             // Set message
             $this->session->set_flashdata('password_updated', 'Mot de passe mis à jour avec succès!');
-            redirect('users/index#vertical-password');
+            redirect('');
         } else {
             $this->session->set_flashdata('password_failed', 'Mise à jour du mot de passe échouée!');
-            redirect('users/index#vertical-password');
+            redirect('');
         }
     }
 

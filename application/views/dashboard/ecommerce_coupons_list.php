@@ -20,7 +20,7 @@
                                     <span class="input-icon input-icon-right font-16"><i class="ti-search"></i></span>
                                     <input class="form-control form-control-rounded form-control-solid" id="key-search" type="text" placeholder="Rechercher ...">
                                 </div>
-                                <a class="btn btn-rounded btn-primary btn-air" href="ecommerce_add_coupon.html">Ajouter un coupon</a>
+                                <a class="btn btn-rounded btn-primary btn-air" href="<?= base_url() ?>dashboard/ecommerce_add_coupon">Ajouter un coupon</a>
                             </div>	
                         </div>
                         <div class="table-responsive row">

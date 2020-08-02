@@ -9,6 +9,7 @@ class DashboardMain extends CI_Controller
 		if (!file_exists(APPPATH . "views/dashboard/ecommerce_edit_product.php")) {
 			show_404();
 		}
+		$data['sum'] = $this->facturation_model->get_total_ammount();
 		$data["product"] = $this->product_model->get_single_product($id);
 		$data['women_categories'] = $this->category_model->get_women_categories();
 		$data['men_categories'] = $this->category_model->get_men_categories();
@@ -16,7 +17,7 @@ class DashboardMain extends CI_Controller
 		// $data['women_categories'] = $this->category_model->get_women_categories();
 		// $data["panier"] = $this->cart_model->get_cart();
 		// $data["sum"] = $this->users_model->get_client_sum($this->session->userdata("userId"));
-		$this->load->view("dashboard/header");
+		$this->load->view("dashboard/header",$data);
 		$this->load->view("dashboard/ecommerce_edit_product", $data);
 		$this->load->view("dashboard/footer");
 	}
@@ -74,10 +75,21 @@ class DashboardMain extends CI_Controller
 		if (!file_exists(APPPATH . "views/dashboard/ecommerce_edit_product.php")) {
 			show_404();
 		}
+		$data['sum'] = $this->facturation_model->get_total_ammount();
 		$data["order"] = $this->facturation_model->get_order_details($id); 
 		$data["panier"] = $this->facturation_model->get_order_panier($id); 
-		$this->load->view("dashboard/header");
+		$this->load->view("dashboard/header",$data);
 		$this->load->view("dashboard/ecommerce_order_details",$data);
+		$this->load->view("dashboard/footer");
+	}
+	function edit_category($id){
+		if (!file_exists(APPPATH . "views/dashboard/ecommerce_edit_product.php")) {
+			show_404();
+		}
+		$data['sum'] = $this->facturation_model->get_total_ammount();
+		$data["category"] = $this->category_model->get_category($id);
+		$this->load->view("dashboard/header",$data);
+		$this->load->view("dashboard/ecommerce_edit_category",$data);
 		$this->load->view("dashboard/footer");
 	}
 }

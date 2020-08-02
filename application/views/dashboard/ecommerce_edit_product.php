@@ -40,7 +40,7 @@
                                             </optgroup>
                                             <optgroup label="Hommes">
                                                 <?php foreach ($men_categories as $men) { ?>
-                                                    <option value='<?= "$men->type $men->nom_categorie" ?>'><?= $men->nom_categorie ?></option>
+                                                    <option <?= $men->nom_categorie == $product["category"] &&  $men->type == $product["type"]  ? "selected" : "" ?> value='<?= "$men->type $men->nom_categorie" ?>'><?= $men->nom_categorie ?></option>
                                                 <?php } ?>
                                             </optgroup>
                                         </select>
